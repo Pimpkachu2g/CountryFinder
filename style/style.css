@@ -11,6 +11,10 @@ html {
     width: 100%;
 }
 
+body {
+    overflow-y: overlay;
+}
+
 .header {
     position: fixed;
     z-index: 10;
@@ -78,14 +82,14 @@ img {
     height: 200px;
     overflow: hidden;
     margin: 50px;
-    border-radius: 20px;
-    box-shadow: 3px 3px 3px #bebebe, -3px -3px 3px #ffffff;
+    border-radius: 7px;
+    /* box-shadow: 3px 3px 3px #bebebe, -3px -3px 3px #ffffff; */
     cursor: pointer;
 }
 
 .card:hover {
-    height: 250px;
-    width: 250px;
+    transform: scale(1.15);
+    box-shadow: 0px 0px 10px #bebebe, -3px -3px 10px #ffffff;
 }
 
 .top {
@@ -115,12 +119,6 @@ img {
     font-size: 0.9rem;
 }
 
-/* .card:hover .bottom > h4 {
-    overflow: unset;
-    text-overflow: unset;
-    white-space: unset;
-} */
-
 .flag {
     position: relative;
     height: 50px;
@@ -132,13 +130,6 @@ img {
     top: 15px;
     left: 75px;
     border: 2.5px solid white;
-}
-
-.card:hover .flag {
-    border-radius: unset;
-    width: 100px;
-    height: 60px;
-    top: 5px;
 }
 
 .stats {
@@ -176,11 +167,6 @@ img {
     justify-content: center;
     align-items: center;
     font-weight: bold;
-}
-
-.card:hover .top .flag > .alpha {
-    left: 85px;
-    top: 45px;
 }
 
 .stats-icon {
@@ -246,6 +232,7 @@ img {
     flex-wrap: wrap;
     height: 100vh;
     width: 80vw;
+    overflow: auto;
 }
 
 .info-section {
@@ -313,4 +300,25 @@ hr {
     align-items: center;
     font-weight: 900;
     cursor: pointer;
+}
+
+@media(max-width: 1250px) {
+    .extra-info {
+        display: block;
+    }
+    .info-header {
+        height: 30vh;
+        width: 100vw;
+        align-content: baseline;
+    }
+    .info-body {
+        height: 70vh;
+        width: 100vw;
+    }
+    .border {
+        margin-top: 10px;
+    }
+    .info-header > h2 {
+        margin-top: 5px;
+    }
 }
